@@ -1,0 +1,191 @@
+
+
+/* Initial params
+body
+	margin: 0
+	padding: 0
+	font-family: 'Muli', sans-serif
+	background: #eee !important
+
+//first motion
+
+@keyframes first-movement
+	0%
+		transform: translateX(0em)
+	100%
+		transform: translateX(20em)
+
+@keyframes delay-mod
+	0%
+		transform: translateY(1em)
+		opacity: 0
+	100%
+		transform: translateY(0em)
+		opacity: 1
+
+
+
+
+/* mixin
+=border-radius($radius)
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius
+	-ms-border-radius: $radius
+	border-radius: $radius
+
+/* Timing functions transition
+
+//ease - specifies a transition effect with a slow start, then fast, then end slowly (this is default)
+//linear - specifies a transition effect with the same speed from start to end
+//ease-in - specifies a transition effect with a slow start
+//ease-out - specifies a transition effect with a slow end
+//ease-in-out - specifies a transition effect with a slow start and end
+//cubic-bezier(n,n,n,n) - lets you define your own values in a cubic-bezier function
+
+=transition-all($time, $motion)
+	-webkit-transition: all $time $motion
+	-moz-transition: all $time $motion
+	-ms-transition: all $time $motion
+	transition: all $time $motion
+
+// add custom transition
+=custom-movement($name-mov, $time)
+	-webkit-animation: $name-mov $time
+	-moz-animation: $name-mov $time
+	animation: $name-mov $time
+
+//------
+
+.capitalize
+	text-transform: capitalize
+
+.title-section
+	font-size: 15pt
+	margin-top: 1.7em
+	margin-bottom: 1em
+
+button
+	background: #ff7a61
+	+border-radius(10em)
+	outline: none
+	border: none
+	color: white
+	width: 45px
+	height: 45px
+	cursor: pointer
+	font-size: 18pt
+	margin: 0em 0em 1.5em 1em
+
+.title-m
+	letter-spacing: -0.5pt
+	font-weight: 100
+	color: #737373
+	text-transform: capitalize
+	font-size: 20pt
+
+.t-support
+	color: rgba(0,0,0,0.5)
+	font-size: 13pt
+	margin-top: 3em
+
+.cont-menu-items
+	margin-top: 1.5em
+	padding-left: 0
+	.menu-item
+		text-transform: capitalize
+		a
+			padding: 0.3em 0.3em
+			width: 100%
+			text-decoration: none
+			color: inherit
+		.label
+			margin-left: 0.3em
+			text-transform: capitalize
+		&:hover
+			+transition-all(ease, 0.26s)
+			background: #e2e2e2
+
+.is-inview
+	background: #47c7e7
+	color: #fff !important
+	+transition-all(ease, 0.5s)
+
+
+
+$color-p: #f7784a
+
+.new-class
+	position: relative
+	width: 100
+	height: 50px
+	overflow: hidden
+	text-transform: uppercase
+	color: white
+	line-height: normal
+
+.float-menu
+	position: fixed
+	min-width: 200px
+	top: 6%
+	left: 2.5%
+
+.section-info
+	min-height: 600px
+	background: #fcfcfc
+	border-bottom: 1px solid #eee
+	padding: 1em 0em
+
+.base-grid
+	overflow: auto
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 5em
+	margin: 0.5em
+	+transition-all(0.16s, ease)
+	.aux
+		+transition-all(0.16s, ease)
+		.square
+			height: 60px
+			background: #eee
+			margin: 0.5em
+			+border-radius(3px)
+			opacity: 1
+			.inner-l
+				font-size: 12pt
+				color: rgba(0,0,0,0.6)
+
+
+
+
+
+/*--------------------------------------------------*/
+
+.base-panel1
+	width: 300px
+	height: 500px
+	background: #fcfcfc
+	overflow: hidden
+	border: 1px solid #fcfcfc
+	-webkit-box-shadow: 2px 3px 31px -12px rgba(0,0,0,0.75)
+	-moz-box-shadow: 2px 3px 31px -12px rgba(0,0,0,0.75)
+	box-shadow: 2px 3px 31px -12px rgba(0,0,0,0.75)
+	+border-radius(5px)
+	+custom-movement(delay-mod ,1s)
+	position: relative
+	.animated-mod
+		border: 1px solid transparent
+		height: 100%
+		margin: 0em
+		background: #fff
+		+border-radius(5px)
+		+transition-all(0.16s, ease)
+.active-mod
+	.animated-mod
+		+transition-all(1s, ease)
+		border: 1px dashed #eee
+		margin: 0.5em
+		height: 93.5%
+		//add animation movement 1
+		+custom-movement(first-movement ,2s)

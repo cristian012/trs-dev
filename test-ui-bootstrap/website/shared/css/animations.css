@@ -1,0 +1,38 @@
+
+
+@keyframes show-to-deep{
+  0%{
+    transform: scale(0.8,0.8);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1,1);
+    opacity: 1;
+  }
+}
+
+@keyframes hide-to-deep{
+  0%{
+    transform: scale(1,1);
+    opacity: 1;
+  }
+  100%{
+    transform: scale(0.8,0.8);
+    opacity: 0;
+  }
+}
+
+
+/* The starting CSS styles for the enter animation */
+
+
+/* The finishing CSS styles for the enter animation */
+.fade.ng-enter.ng-enter-active,
+.fade.ng-leave {
+  animation: show-to-deep 0.26s ease
+}
+
+.fade.ng-leave.ng-leave-active,
+.fade.ng-enter {
+  animation: hide-to-deep 0.26s ease
+}

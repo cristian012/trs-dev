@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Demo</title>
+	<link rel="stylesheet" type="text/css" href="shared/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="shared/css/layout-flex.css">
+	<link rel="stylesheet" type="text/css" href="shared/css/animations.css">
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,800" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="shared/bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+	<!--<link rel="stylesheet" type="text/css" href="shared/bower_components/bootstrap-sass/assets/stylesheets/_bootstrap-custom.css">-->
+</head>
+<body ng-app="demo"  ng-controller="mainController">
+	<section id="js-scrollspy" class="layout-row">
+		<section class="flex-lg-20"></section>
+		<section class="float-menu">
+			<div class="layout-row">
+				<div class="title-m">transitions modules</div>
+			</div>
+			<!-- nav -->
+			<ul class="js-scrollspy-nav cont-menu-items">
+				<li class="menu-item layout-row"><a href="#s1">paragraph</a></li>
+				<li class="menu-item layout-row"><a href="#s2">tables</a></li>
+				<li class="menu-item layout-row"><a href="#s3">buttons</a></li>
+				<li class="menu-item layout-row"><a href="#s4">calendar</a></li>
+				<li class="menu-item layout-row"><a href="#s5">element</a></li>
+			</ul>
+		</section>
+		<section class="js-scrollspy-content content layout-column flex-lg-80" style="height:100%; overflow:auto;">
+			<!-- section container -->
+			<section id="s1" class="section-info layout-row justify-center flex-lg-100">
+				<div class="flex-lg-90">
+					<div class="title-section capitalize">Paragraphs</div>
+					<div class="">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+					</div>
+				</div>
+			</section>
+			<!-- section container -->
+			<section id="s2" class="section-info layout-row justify-center flex-lg-100 align-center justify-center">
+				<div class="flex-lg-90">
+					<div class="title-section capitalize">tables</div>
+					<!-- animation-panel-out -->
+					<div id="panel-m" class="base-panel1 layout-column justify-end" ng-class="{'active-mod': active}">
+						<div class="base-grid layout-row layout-wrap justify-start align-start">
+							<div class="aux layout-row layout-wrap justify-start align-start flex-lg-100">
+								<div ng-repeat="item in items" class="square fade flex-lg-19 layout-row justify-center align-center" ng-click="del($index)">
+									<div class="inner-l"></div>
+								</div>
+							</div>
+						</div>
+						<div class="layout-row"><button type="button" name="button" ng-click="add()">+</button></div>
+					</div>
+				</div>
+			</section>
+			<!-- section container -->
+			<section id="s3" class="section-info layout-row justify-center flex-lg-100">
+				<div class="flex-lg-90">
+					<div class="title-section capitalize">buttons</div>
+				</div>
+			</section>
+			<!-- section container -->
+			<section id="s4" class="section-info layout-row justify-center flex-lg-100">
+				<div class="flex-lg-90">
+					<div class="title-section capitalize">calendar</div>
+				</div>
+			</section>
+			<!-- section container -->
+			<section id="s5" class="section-info layout-row justify-center flex-lg-100">
+				<div class="flex-lg-90">
+					<div class="title-section capitalize">five section</div>
+				</div>
+			</section>
+			<!-- section container -->
+			<section id="s6" class="section-info layout-row justify-center flex-lg-100">
+				<div class="flex-lg-90">
+					<div class="title-section capitalize">five section</div>
+				</div>
+			</section>
+		</section>
+	</section>
+	<!-- Import dependencies scripts -->
+	<script src="shared/bower_components/angular/angular.min.js"></script>
+	<script src="shared/bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="shared/bower_components/angular-bootstrap/ui-bootstrap.min.js" type="text/javascript"></script>
+	<script src="shared/bower_components/scrollspy/build/scrollspy.js"></script>
+	<script src="app.js"></script>
+
+	<script type="text/javascript">
+	var spy = new ScrollSpy('#js-scrollspy', {
+			nav: '.js-scrollspy-nav > li > a',
+			className: 'is-inview',
+			callback: function () {
+			}
+		});
+	</script>
+
+</body>
+</html>
+
+<!-- <div class="animated-mod layout-column align-center justify-space-between">
+<div class="t-support">
+Animated panel
+</div>
+<div class="">
+<button ng-click="active=!active"><b>GO!</b></button>
+</div>
+</div> -->
